@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.jsx',
   output: {
     path: './',
     filename: 'bundle.js'
@@ -8,6 +8,9 @@ module.exports = {
     inline: true,
     port: 7777
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.scss']
+  },
   module:{
     loaders:[
       {
@@ -15,7 +18,7 @@ module.exports = {
         loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel',
         query: {
