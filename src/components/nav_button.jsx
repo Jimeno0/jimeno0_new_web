@@ -10,7 +10,9 @@ export default class NavButton extends Component {
   handleClick() {
     this.setState({ open: !this.state.open });
     const modal = document.querySelector('ul.menu-modal');
+    const burgerButton = document.querySelector('button.c-hamburger');
     modal.classList.toggle('active');
+    burgerButton.classList.toggle('is-active');
   }
   renderIcon() {
     if (this.state.open) {
@@ -18,17 +20,13 @@ export default class NavButton extends Component {
     }
     return (<img src="src/images/menu.png" alt="menu icon" />);
   }
-  renderModal() {
-
-  }
   render() {
     return (
-      <div>
-        <div className="menu-button">
-          <button onClick={() => this.handleClick()}>
-            {this.renderIcon()}
-          </button>
-        </div>
+      <div className="menu-button-component">
+        <img src="src/images/hexagon_menu.svg" alt="hexagon button bkg" />
+        <button onClick={() => this.handleClick()} className="c-hamburger">
+          <span>toggle menu</span>
+        </button>
         <ul className="menu-modal">
           <li>ABOUT</li>
           <li>PROJECTS</li>
