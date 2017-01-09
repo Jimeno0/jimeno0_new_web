@@ -1,0 +1,35 @@
+.menu-button {
+  position: fixed;
+  top: 2.4rem;
+  left: 2.4rem;
+  z-index: 1;
+  img {
+    width: 2rem;
+  }
+}
+.menu-modal {
+  position: fixed;
+  top: 0px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  list-style: none;
+  font-size: $h2-size;
+  opacity:0;
+  transition:all .5s;
+  transform:translateX(-30%);
+  li{
+    padding: 2rem 0rem;
+  }
+}
+
+.menu-modal.active {
+  opacity:1;
+  transform:translateX(0%);
+}

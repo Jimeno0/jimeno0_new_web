@@ -1,6 +1,10 @@
-$h1-size: 24rem;
-$h2-size: 20rem;
-$regular-size:14rem;
+// $h1-size: 24rem;
+// $h2-size: 20rem;
+// $regular-size:14rem;
+
+$h1-size: 1.6rem;
+$h2-size: 1.2rem;
+$regular-size: 1rem;
 
 body {
   font-family: helvetica;
@@ -9,3 +13,4 @@ body {
 }
 
 @import "./partials/intro";
+@import "./partials/nav_button";
