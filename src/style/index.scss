@@ -1,3 +1,11 @@
+$h1-size: 24rem;
+$h2-size: 20rem;
+$regular-size:14rem;
+
 body {
-  background: purple
+  font-family: helvetica;
+  font-size: 10px;
+  margin: 0px;
 }
+
+@import "./partials/intro";

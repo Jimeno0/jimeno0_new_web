@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Intro from './intro';
 
-class App extends Component {
-  render() {
-    return (
-      <h1> Hi bitchiii</h1>
-    );
-  }
-}
-
+const App = () =>
+  <Intro />;
 export default App;
+

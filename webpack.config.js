@@ -2,29 +2,29 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: './',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     inline: true,
-    port: 7777
+    port: 7777,
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss']
+    extensions: ['', '.js', '.jsx', '.scss'],
   },
-  module:{
-    loaders:[
+  module: {
+    loaders: [
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
-  }
-}
+          presets: ['es2015', 'react'],
+        },
+      },
+    ],
+  },
+};
