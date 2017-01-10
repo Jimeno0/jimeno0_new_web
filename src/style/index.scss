@@ -12,18 +12,28 @@ body {
   font-size: 10px;
   margin: 0px;
 }
-h1, h2, h3 {
+h1, h2 {
   margin: 1rem 0;
   font-size: $h1-size;
+  font-weight: 100;
+}
+h3 {
+  font-size: 1.2rem;
+  font-size: $h2-size;
   font-weight: 100;
 }
 
 p {
   font-size: $regular-size;
+  font-weight: 100;
   text-align: center;
 }
 section {
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -37,5 +47,5 @@ a {
 @import "./partials/nav_button";
 @import "./partials/about";
 
-// @import "./partials/card";
-// @import "./partials/projects";
+@import "./partials/card";
+@import "./partials/projects";

@@ -2,10 +2,30 @@ section.projects article{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
+  height: 75vh;
   align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 
   img {
     width: 100%;
+  }
+  img:last-child {
+    width: 2rem;
+  }
+
+  a:last-child {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 2px solid #42ab9e;
+    background-color: transparent;
+    padding: 0.6rem 1.7rem;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
 }

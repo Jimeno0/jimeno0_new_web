@@ -8,9 +8,9 @@ const Card = (props) => {
       <h2>{name}</h2>
       <p>{description}</p>
       <p>Technologies</p>
-      <p>{technologies}</p>
+      <h3>{technologies}</h3>
+      <a href={github} ><img src="src/images/github-logo.svg" alt="github link" /></a>
       <a href={web} >View app</a>
-      <a href={github} >source code</a>
     </article>
   );
 };

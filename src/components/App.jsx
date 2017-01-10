@@ -9,7 +9,7 @@ const App = () =>
     <Intro />
     <NavButton />
     <About />
-    {/* <Projects /> */}
+    <Projects />
   </div>;
 export default App;
 
