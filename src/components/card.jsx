@@ -9,12 +9,14 @@ const Card = (props) => {
       <p>{description}</p>
       <p>Technologies</p>
       <p>{technologies}</p>
-      <button href={web} >View app</button>
-      <button href={github} >source code</button>
+      <a href={web} >View app</a>
+      <a href={github} >source code</a>
     </article>
   );
 };
 
-// Card.propTypes.project = React.PropTypes.array.isRequired;
+Card.propTypes = {
+  project: React.PropTypes.object,
+};
 
 export default Card;

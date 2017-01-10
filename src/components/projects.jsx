@@ -18,7 +18,7 @@ class Projects extends Component {
   render() {
     const cards = this.state.projects.map(project => <Card key={project.id} project={project} />);
     return (
-      <section>
+      <section className="projects">
         {cards}
       </section>
     );
