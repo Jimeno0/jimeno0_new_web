@@ -1,0 +1,11 @@
+[
+  {
+    "id": 0,
+    "name": "MPULSE",
+    "image": "src/images/mpulse-capture.png",
+    "description": "Track your artists & concert in one place",
+    "technologies": "React · Redux · Sass · Rails · API",
+    "github": "https://github.com/Jimeno0/MPULSE-FRONT",
+    "web": "http://music-pulse.co/"
+  }
+]
