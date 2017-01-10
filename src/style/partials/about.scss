@@ -1,0 +1,10 @@
+section.about{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  h2{
+    font-size: $h1-size;
+  }
+}
