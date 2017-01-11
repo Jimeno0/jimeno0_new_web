@@ -5,10 +5,10 @@ const Card = (props) => {
   return (
     <article>
       <img src={image} alt={name} />
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <p>{description}</p>
-      <p>Technologies</p>
-      <h3>{technologies}</h3>
+      <h3>Technologies</h3>
+      <p>{technologies}</p>
       <a href={github} ><img src="src/images/github-logo.svg" alt="github link" /></a>
       <a href={web} >View app</a>
     </article>
