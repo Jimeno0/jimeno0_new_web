@@ -1,0 +1,29 @@
+section.projects article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 1rem;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  background-color: white;
+
+  img {
+    width: 100%;
+    &:last-child {
+      width: 2rem;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    p {
+      margin-top: 0px;
+    }
+  }
+}
+
+svg {
+  color:black;
+}

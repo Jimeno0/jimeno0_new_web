@@ -3,6 +3,7 @@
   position: fixed;
   top: 2.0rem;
   left: 1.5rem;
+  z-index: 1;
   }
 }
 .menu-modal {
@@ -23,7 +24,12 @@
   transition:all .5s;
   transform:translateX(-60%);
   li{
+    color: $brand-color;
     padding: 2rem 0rem;
+
+    a {
+      font-size: $h2-size;
+    }
   }
 }
 
@@ -68,10 +74,9 @@ $button-transistion-duration: 0.3s;     // The transition duration
   transition: background $button-transistion-duration;
   background-color:transparent;
 
-
   position: fixed;
-  top: 3rem;
-  left: 2.4rem;
+  top: 3.5rem;
+  left: 2.9rem;
   z-index: 1;
 }
 
@@ -86,7 +91,7 @@ $button-transistion-duration: 0.3s;     // The transition duration
   left: $button-pad;
   right: $button-pad;
   height: $bar-thickness;
-  background: black;
+  background: white;
 }
 
 .c-hamburger span::before,
@@ -96,7 +101,7 @@ $button-transistion-duration: 0.3s;     // The transition duration
   left: 0;
   width: 100%;
   height: $bar-thickness;
-  background-color: black;
+  background-color: white;
   content: "";
 }
 

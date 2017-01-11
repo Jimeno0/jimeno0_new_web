@@ -1,29 +1,40 @@
-// $h1-size: 24rem;
-// $h2-size: 20rem;
-// $regular-size:14rem;
+$h1-size: 3rem;
+$h2-size: 2rem;
+$regular-size: 1.6rem;
+$brand-color: #42ab9e;
+$secondary-color: #ACD7EC;
+$gray-color: #eee;
 
-$h1-size: 1.6rem;
-$h2-size: 1.2rem;
-$regular-size: 1rem;
-$brand-color:#42ab9e;
+html {
+  font-size: 10px;
+}
 
 body {
   font-family: helvetica;
-  font-size: 10px;
   margin: 0px;
 }
-h1, h2, h3 {
-  margin: 1rem 0;
+h1, h2 {
+  margin: 2rem 0;
   font-size: $h1-size;
+  font-weight: 400;
+}
+h3 {
+  font-size: 1.2rem;
+  font-size: $h2-size;
   font-weight: 100;
 }
 
 p {
   font-size: $regular-size;
+  font-weight: 100;
   text-align: center;
 }
 section {
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -33,6 +44,16 @@ a {
   font-size: $regular-size;
 }
 
+hr {
+  width: 9rem;
+  border: none;
+  border-bottom: 1px solid $brand-color;
+}
+
 @import "./partials/intro";
 @import "./partials/nav_button";
 @import "./partials/about";
+@import "./partials/card";
+@import "./partials/projects";
+@import "./partials/skills";
+@import "./partials/footer";
