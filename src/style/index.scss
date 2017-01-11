@@ -16,7 +16,7 @@ body {
 h1, h2 {
   margin: 2rem 0;
   font-size: $h1-size;
-  font-weight: 100;
+  font-weight: 400;
 }
 h3 {
   font-size: 1.2rem;
@@ -42,6 +42,12 @@ a {
   color: $brand-color;
   text-decoration: none;
   font-size: $regular-size;
+}
+
+hr {
+  width: 9rem;
+  border: none;
+  border-bottom: 1px solid $brand-color;
 }
 
 @import "./partials/intro";
