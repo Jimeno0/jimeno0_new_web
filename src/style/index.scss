@@ -1,16 +1,20 @@
-$h1-size: 1.6rem;
-$h2-size: 1.2rem;
-$regular-size: 1rem;
+$h1-size: 3rem;
+$h2-size: 2rem;
+$regular-size: 1.6rem;
 $brand-color: #42ab9e;
+$secondary-color: #ACD7EC;
 $gray-color: #979797;
+
+html {
+  font-size: 10px;
+}
 
 body {
   font-family: helvetica;
-  font-size: 10px;
   margin: 0px;
 }
 h1, h2 {
-  margin: 1rem 0;
+  margin: 2rem 0;
   font-size: $h1-size;
   font-weight: 100;
 }

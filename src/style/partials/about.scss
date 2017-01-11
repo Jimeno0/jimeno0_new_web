@@ -1,6 +1,18 @@
 section.about{
   height: 100vh;
+  background-color: $brand-color;
+  color: white;
+  padding-top: 9rem;
+  justify-content: initial;
   h2{
     font-size: $h1-size;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  a {
+    color: $secondary-color;
   }
 }
