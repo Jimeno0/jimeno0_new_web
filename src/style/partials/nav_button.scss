@@ -26,6 +26,10 @@
   li{
     color: $brand-color;
     padding: 2rem 0rem;
+
+    a {
+      font-size: $h2-size;
+    }
   }
 }
 
