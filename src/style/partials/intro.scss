@@ -1,5 +1,8 @@
 section.intro {
   height: 100vh;
+  a {
+    font-size: $h1-size;
+  }
   img {
     width: 12rem;
   }

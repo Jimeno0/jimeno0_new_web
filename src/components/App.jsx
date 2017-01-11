@@ -4,6 +4,7 @@ import NavButton from './nav_button';
 import About from './About';
 import Projects from './projects';
 import Skills from './skills';
+import Footer from './footer';
 
 const App = () =>
   <div>
@@ -12,6 +13,7 @@ const App = () =>
     <About />
     <Projects />
     <Skills />
+    <Footer />
   </div>;
 export default App;
 
