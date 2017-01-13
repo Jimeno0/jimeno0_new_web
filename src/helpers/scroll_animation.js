@@ -8,9 +8,9 @@ window.requestAnimFrame = (() =>
 
 // main function
 const ScrollToY = (scrollTargetYparam, speedParam, easingParam) => {
-    // scrollTargetY: the target scrollY property of the window
-    // speed: time in pixels per second
-    // easing: easing equation to use
+  // scrollTargetY: the target scrollY property of the window
+  // speed: time in pixels per second
+  // easing: easing equation to use
   const scrollY = window.scrollY || document.documentElement.scrollTop;
   const scrollTargetY = scrollTargetYparam || 0;
   const speed = speedParam || 2000;
@@ -31,16 +31,16 @@ const ScrollToY = (scrollTargetYparam, speedParam, easingParam) => {
     easeInOutQuint(pos) {
       const newPos = pos / 0.5;
       if ((newPos) < 1) {
-        return 0.5 * Math.pow(newPos, 5);
+        // return 0.5 * Math.pow(newPos, 5);
+        return 0.5 * (newPos ** 5);
       }
-      return 0.5 * (Math.pow((newPos - 2), 5) + 2);
-    }
+      return 0.5 * (((newPos - 2) ** 5) + 2);
+    },
   };
 
   // add animation loop
   function tick() {
     currentTime += 1 / 60;
-
     const p = currentTime / time;
     const t = easingEquations[easing](p);
 
