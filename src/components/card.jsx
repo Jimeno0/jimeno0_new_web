@@ -5,16 +5,17 @@ const Card = (props) => {
   return (
     <article>
       <h3>{name}</h3>
-      <img src={image} alt={name} />
+      <a href={web}><img src={image} alt={name} /></a>
       <div>
-
         <p>{description}</p>
       </div>
       <div>
-        <h3>Technologies</h3>
+        <h4>Technologies</h4>
         <p>{technologies}</p>
       </div>
-      <a href={github} ><img src="src/images/github-logo.svg" alt="github link" /></a>
+      <a href={github}>
+        <img className="icon" src="src/images/github-logo.svg" alt="github link" />
+      </a>
       <hr />
     </article>
   );

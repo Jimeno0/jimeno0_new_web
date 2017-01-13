@@ -9,8 +9,8 @@ section.projects article{
 
   img {
     width: 100%;
-    &:last-child {
-      width: 2rem;
+    &.icon {
+      width: 3rem;
     }
   }
   div {

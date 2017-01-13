@@ -14,7 +14,7 @@ class Home extends Component {
         <div>
           <div>
             <h1>Hi<br />I'm <a href="www.github.com/jimeno0">Jimeno0</a></h1>
-            <h3>A full stack developer</h3>
+            <p>A full stack developer</p>
           </div>
           <img className="logo" src="src/images/jimeno0_logo.svg" alt="logo" />
         </div>
