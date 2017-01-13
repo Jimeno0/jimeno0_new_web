@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import scrollToY from '../helpers/scroll_animation';
 export default class NavButton extends Component {
   constructor(props) {
     super(props);
@@ -18,9 +18,9 @@ export default class NavButton extends Component {
     const sectionClass = event.currentTarget.dataset.section;
     const section = document.querySelector(`section.${sectionClass}`);
     const scrollTo = section.offsetTop;
-    window.scrollTo(0, scrollTo);
-    console.log(section);
+    // window.scrollTo(0, scrollTo);
     this.handleClick();
+    scrollToY(scrollTo);
   }
   renderIcon() {
     if (this.state.open) {
@@ -29,6 +29,12 @@ export default class NavButton extends Component {
     return (<img src="src/images/menu.png" alt="menu icon" />);
   }
   render() {
+    const sections = ['home', 'about', 'projects', 'skills'];
+    const sectionsNodes = sections.map(section => (
+      <li key={section} data-section={section} onClick={e => this.handleGoTo(e)} >
+        {section.toUpperCase()}
+      </li>
+    ));
     return (
       <div className="menu-button-component">
         <img src="src/images/hexagon_menu.svg" alt="hexagon button bkg" />
@@ -36,10 +42,7 @@ export default class NavButton extends Component {
           <span>toggle menu</span>
         </button>
         <ul className="menu-modal">
-          <li data-section="about" onClick={e => this.handleGoTo(e)}>ABOUT</li>
-          <li data-section="projects" onClick={e => this.handleGoTo(e)}>PROJECTS</li>
-          <li data-section="skills" onClick={e => this.handleGoTo(e)}>SKILLS</li>
-          <li data-section="intro" onClick={e => this.handleGoTo(e)}>CONTACT</li>
+          {sectionsNodes}
           <li><a href="https://medium.com/@jimeno0">BLOG</a></li>
         </ul>
       </div>

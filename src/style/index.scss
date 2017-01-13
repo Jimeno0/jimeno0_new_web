@@ -21,12 +21,17 @@ h1, h2 {
 h3 {
   font-size: 1.2rem;
   font-size: $h2-size;
-  font-weight: 100;
+  font-weight: 400;
+}
+h4 {
+  font-size: 1.2rem;
+  font-size: $h2-size;
+  font-weight: 300;
 }
 
 p {
   font-size: $regular-size;
-  font-weight: 100;
+  font-weight: 200;
   text-align: center;
 }
 section {
@@ -50,10 +55,11 @@ hr {
   border-bottom: 1px solid $brand-color;
 }
 
-@import "./partials/intro";
+@import "./partials/home";
 @import "./partials/nav_button";
 @import "./partials/about";
 @import "./partials/card";
 @import "./partials/projects";
 @import "./partials/skills";
 @import "./partials/footer";
+@import "./partials/contact_icons";

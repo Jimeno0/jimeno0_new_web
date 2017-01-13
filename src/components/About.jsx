@@ -5,7 +5,7 @@ const About = () =>
     <img src="src/images/carnet.png" alt="carnet" />
     <div>
       <h2>WHO?</h2>
-      <p>Hi Im Carlos P. Jimeno AKA <a href="https://twitter.com/jimeno0">Jimeno0</a></p>
+      <p>My name is Carlos P. Jimeno AKA <a href="https://twitter.com/jimeno0">Jimeno0</a></p>
       <p>Im a full stack developer and new techs lover. Self-taught addicted.</p>
       <p>
         Currently working at <a href="https://influencity.com/es/"> Influencity </a>

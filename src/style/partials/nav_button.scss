@@ -1,8 +1,9 @@
 .menu-button-component {
   img {
   position: fixed;
-  top: 2.0rem;
-  left: 1.5rem;
+  top: 20px;
+  left: 15px;
+  width: 50px;
   z-index: 1;
   }
 }
@@ -21,8 +22,9 @@
   list-style: none;
   font-size: $h2-size;
   opacity:0;
-  transition:all .5s;
-  transform:translateX(-60%);
+  transition:all .2s;
+  transition-timing-function: ease-in-out;
+  transform:translateX(-100%);
   li{
     color: $brand-color;
     padding: 2rem 0rem;
@@ -40,11 +42,11 @@
 
 //BUtton icon
 
-$button-width: 35px;                    // The width of the button area
+$button-width: 31px;                    // The width of the button area
 $button-height: 30px;                   // The height of the button area
 $bar-thickness: 3px;                    // The thickness of the button bars
 $button-pad: 2px;                      // The left/right padding between button area and bars.
-$button-bar-space: 7px;                // The spacing between button bars
+$button-bar-space: 5px;                // The spacing between button bars
 $button-transistion-duration: 0.3s;     // The transition duration
 /**
  * Toggle Switch Globals
@@ -56,7 +58,6 @@ $button-transistion-duration: 0.3s;     // The transition duration
 
 .c-hamburger {
   display: block;
-  position: relative;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -75,8 +76,8 @@ $button-transistion-duration: 0.3s;     // The transition duration
   background-color:transparent;
 
   position: fixed;
-  top: 3.5rem;
-  left: 2.9rem;
+  top: 30px;
+  left: 25px;
   z-index: 1;
 }
 

@@ -1,4 +1,4 @@
-section.intro {
+section.home {
   height: 100vh;
   justify-content: space-between;
   & > div {
@@ -8,6 +8,10 @@ section.intro {
     justify-content: space-around;
     height: 70vh;
   }
+  h1{
+    text-align: center;
+  }
+
   a {
     font-size: $h1-size;
   }
