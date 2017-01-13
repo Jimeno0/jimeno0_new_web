@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ContactIcons from './contact_icons';
 import scrollToY from '../helpers/scroll_animation';
 
 class Home extends Component {
@@ -9,6 +10,7 @@ class Home extends Component {
   render() {
     return (
       <section className="home">
+        <ContactIcons />
         <div>
           <div>
             <h1>Hi<br />I'm <a href="www.github.com/jimeno0">Jimeno0</a></h1>
