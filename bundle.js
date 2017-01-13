@@ -17154,7 +17154,7 @@
 
 	  enqueueElementInternal: function (internalInstance, nextElement, nextContext) {
 	    internalInstance._pendingElement = nextElement;
-	    // TODO: introduce _pendingContext instead of setting it directly.
+	    // TODO: homeduce _pendingContext instead of setting it directly.
 	    internalInstance._context = nextContext;
 	    enqueueUpdate(internalInstance);
 	  },
@@ -21491,9 +21491,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _intro = __webpack_require__(179);
+	var _home = __webpack_require__(179);
 
-	var _intro2 = _interopRequireDefault(_intro);
+	var _home2 = _interopRequireDefault(_home);
 
 	var _nav_button = __webpack_require__(181);
 
@@ -21521,7 +21521,7 @@
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    _react2.default.createElement(_intro2.default, null),
+	    _react2.default.createElement(_home2.default, null),
 	    _react2.default.createElement(_nav_button2.default, null),
 	    _react2.default.createElement(_About2.default, null),
 	    _react2.default.createElement(_projects2.default, null),
@@ -21559,16 +21559,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Intro = function (_Component) {
-	  _inherits(Intro, _Component);
+	var home = function (_Component) {
+	  _inherits(home, _Component);
 
-	  function Intro() {
-	    _classCallCheck(this, Intro);
+	  function home() {
+	    _classCallCheck(this, home);
 
-	    return _possibleConstructorReturn(this, (Intro.__proto__ || Object.getPrototypeOf(Intro)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (home.__proto__ || Object.getPrototypeOf(home)).apply(this, arguments));
 	  }
 
-	  _createClass(Intro, [{
+	  _createClass(home, [{
 	    key: 'goToAbout',
 	    value: function goToAbout() {
 	      console.log('clicked!');
@@ -21642,7 +21642,7 @@
 
 	      return _react2.default.createElement(
 	        'section',
-	        { className: 'intro' },
+	        { className: 'home' },
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -21681,10 +21681,10 @@
 	    }
 	  }]);
 
-	  return Intro;
+	  return home;
 	}(_react.Component);
 
-	exports.default = Intro;
+	exports.default = home;
 
 /***/ },
 /* 180 */
@@ -21863,7 +21863,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'li',
-	            { 'data-section': 'intro', onClick: function onClick(e) {
+	            { 'data-section': 'home', onClick: function onClick(e) {
 	                return _this2.handleGoTo(e);
 	              } },
 	            'CONTACT'
@@ -22288,7 +22288,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-size: 10px; }\n\nbody {\n  font-family: helvetica;\n  margin: 0px; }\n\nh1, h2 {\n  margin: 2rem 0;\n  font-size: 3rem;\n  font-weight: 400; }\n\nh3 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 100; }\n\np {\n  font-size: 1.6rem;\n  font-weight: 100;\n  text-align: center; }\n\nsection {\n  padding: 2rem 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  box-sizing: border-box; }\n\na {\n  color: #42ab9e;\n  text-decoration: none;\n  font-size: 1.6rem; }\n\nhr {\n  width: 9rem;\n  border: none;\n  border-bottom: 1px solid #42ab9e; }\n\nsection.intro {\n  height: 100vh;\n  justify-content: space-between; }\n  section.intro > div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    height: 70vh; }\n  section.intro a {\n    font-size: 3rem; }\n  section.intro img.logo {\n    width: 12rem; }\n  section.intro img.down-row {\n    width: 2rem; }\n  section.intro button {\n    font-size: 2rem;\n    border: none;\n    border-bottom: 2px solid #42ab9e;\n    background-color: transparent;\n    padding: 0.6rem 1.7rem;\n    font-weight: 100; }\n  section.intro svg polyline {\n    stroke-width: .3rem;\n    stroke: black;\n    animation-name: greenBlack;\n    animation-duration: 3s;\n    animation-iteration-count: infinite; }\n\n@keyframes greenBlack {\n  0% {\n    stroke: #42ab9e; }\n  50% {\n    stroke: #eee; }\n  100% {\n    stroke: #42ab9e; } }\n\n.menu-button-component img {\n  position: fixed;\n  top: 2.0rem;\n  left: 1.5rem;\n  z-index: 1; }\n\n.menu-modal {\n  position: fixed;\n  top: 0px;\n  background-color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  list-style: none;\n  font-size: 2rem;\n  opacity: 0;\n  transition: all .5s;\n  transform: translateX(-60%); }\n  .menu-modal li {\n    color: #42ab9e;\n    padding: 2rem 0rem; }\n    .menu-modal li a {\n      font-size: 2rem; }\n\n.menu-modal.active {\n  opacity: 1;\n  transform: translateX(0%); }\n\n/**\n * Toggle Switch Globals\n *\n * All switches should take on the class `c-hamburger` as well as their\n * variant that will give them unique properties. This class is an overview\n * class that acts as a reset for all versions of the icon.\n */\n.c-hamburger {\n  display: block;\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 35px;\n  height: 30px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  background-color: transparent;\n  position: fixed;\n  top: 3.5rem;\n  left: 2.9rem;\n  z-index: 1; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 13.5px;\n  left: 2px;\n  right: 2px;\n  height: 3px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 3px;\n  background-color: white;\n  content: \"\"; }\n\n.c-hamburger span::before {\n  top: -10px; }\n\n.c-hamburger span::after {\n  bottom: -10px; }\n\n.c-hamburger span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger span::before {\n  transition-property: top, transform; }\n\n.c-hamburger span::after {\n  transition-property: bottom, transform; }\n\n/* active state, i.e. menu open */\n.c-hamburger.is-active span {\n  background: none; }\n\n.c-hamburger.is-active span::before {\n  top: 0;\n  transform: rotate(45deg); }\n\n.c-hamburger.is-active span::after {\n  bottom: 0;\n  transform: rotate(-45deg); }\n\n.c-hamburger.is-active span::before,\n.c-hamburger.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\nsection.about {\n  height: 100vh;\n  background-color: #42ab9e;\n  color: white;\n  padding-top: 9rem;\n  justify-content: initial; }\n  section.about h2 {\n    font-size: 3rem; }\n  section.about div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n  section.about a {\n    color: #ACD7EC; }\n\nsection.projects article {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 2rem 1rem;\n  box-sizing: border-box;\n  margin-bottom: 2rem;\n  background-color: white; }\n  section.projects article img {\n    width: 100%; }\n    section.projects article img:last-child {\n      width: 2rem; }\n  section.projects article div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin: 2rem 0; }\n    section.projects article div p {\n      margin-top: 0px; }\n\nsvg {\n  color: black; }\n\nsection.projects {\n  display: flex;\n  padding: 0;\n  background-color: #eee; }\n  section.projects h2 {\n    margin-top: 6rem; }\n\nsection.skills {\n  height: 100vh; }\n  section.skills h2 {\n    margin-top: 6rem; }\n  section.skills div {\n    text-align: center; }\n\nfooter {\n  height: 20vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n  footer .icons {\n    display: flex;\n    justify-content: space-around;\n    margin: 1rem; }\n", ""]);
+	exports.push([module.id, "html {\n  font-size: 10px; }\n\nbody {\n  font-family: helvetica;\n  margin: 0px; }\n\nh1, h2 {\n  margin: 2rem 0;\n  font-size: 3rem;\n  font-weight: 400; }\n\nh3 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 100; }\n\np {\n  font-size: 1.6rem;\n  font-weight: 100;\n  text-align: center; }\n\nsection {\n  padding: 2rem 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  box-sizing: border-box; }\n\na {\n  color: #42ab9e;\n  text-decoration: none;\n  font-size: 1.6rem; }\n\nhr {\n  width: 9rem;\n  border: none;\n  border-bottom: 1px solid #42ab9e; }\n\nsection.home {\n  height: 100vh;\n  justify-content: space-between; }\n  section.home > div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    height: 70vh; }\n  section.home a {\n    font-size: 3rem; }\n  section.home img.logo {\n    width: 12rem; }\n  section.home img.down-row {\n    width: 2rem; }\n  section.home button {\n    font-size: 2rem;\n    border: none;\n    border-bottom: 2px solid #42ab9e;\n    background-color: transparent;\n    padding: 0.6rem 1.7rem;\n    font-weight: 100; }\n  section.home svg polyline {\n    stroke-width: .3rem;\n    stroke: black;\n    animation-name: greenBlack;\n    animation-duration: 3s;\n    animation-iteration-count: infinite; }\n\n@keyframes greenBlack {\n  0% {\n    stroke: #42ab9e; }\n  50% {\n    stroke: #eee; }\n  100% {\n    stroke: #42ab9e; } }\n\n.menu-button-component img {\n  position: fixed;\n  top: 2.0rem;\n  left: 1.5rem;\n  z-index: 1; }\n\n.menu-modal {\n  position: fixed;\n  top: 0px;\n  background-color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  list-style: none;\n  font-size: 2rem;\n  opacity: 0;\n  transition: all .5s;\n  transform: translateX(-60%); }\n  .menu-modal li {\n    color: #42ab9e;\n    padding: 2rem 0rem; }\n    .menu-modal li a {\n      font-size: 2rem; }\n\n.menu-modal.active {\n  opacity: 1;\n  transform: translateX(0%); }\n\n/**\n * Toggle Switch Globals\n *\n * All switches should take on the class `c-hamburger` as well as their\n * variant that will give them unique properties. This class is an overview\n * class that acts as a reset for all versions of the icon.\n */\n.c-hamburger {\n  display: block;\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 35px;\n  height: 30px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  background-color: transparent;\n  position: fixed;\n  top: 3.5rem;\n  left: 2.9rem;\n  z-index: 1; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 13.5px;\n  left: 2px;\n  right: 2px;\n  height: 3px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 3px;\n  background-color: white;\n  content: \"\"; }\n\n.c-hamburger span::before {\n  top: -10px; }\n\n.c-hamburger span::after {\n  bottom: -10px; }\n\n.c-hamburger span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger span::before {\n  transition-property: top, transform; }\n\n.c-hamburger span::after {\n  transition-property: bottom, transform; }\n\n/* active state, i.e. menu open */\n.c-hamburger.is-active span {\n  background: none; }\n\n.c-hamburger.is-active span::before {\n  top: 0;\n  transform: rotate(45deg); }\n\n.c-hamburger.is-active span::after {\n  bottom: 0;\n  transform: rotate(-45deg); }\n\n.c-hamburger.is-active span::before,\n.c-hamburger.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\nsection.about {\n  height: 100vh;\n  background-color: #42ab9e;\n  color: white;\n  padding-top: 9rem;\n  justify-content: initial; }\n  section.about h2 {\n    font-size: 3rem; }\n  section.about div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n  section.about a {\n    color: #ACD7EC; }\n\nsection.projects article {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 2rem 1rem;\n  box-sizing: border-box;\n  margin-bottom: 2rem;\n  background-color: white; }\n  section.projects article img {\n    width: 100%; }\n    section.projects article img:last-child {\n      width: 2rem; }\n  section.projects article div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin: 2rem 0; }\n    section.projects article div p {\n      margin-top: 0px; }\n\nsvg {\n  color: black; }\n\nsection.projects {\n  display: flex;\n  padding: 0;\n  background-color: #eee; }\n  section.projects h2 {\n    margin-top: 6rem; }\n\nsection.skills {\n  height: 100vh; }\n  section.skills h2 {\n    margin-top: 6rem; }\n  section.skills div {\n    text-align: center; }\n\nfooter {\n  height: 20vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n  footer .icons {\n    display: flex;\n    justify-content: space-around;\n    margin: 1rem; }\n", ""]);
 
 	// exports
 

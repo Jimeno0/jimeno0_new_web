@@ -17,7 +17,6 @@ export default class NavButton extends Component {
   handleGoTo(event) {
     const sectionClass = event.currentTarget.dataset.section;
     const section = document.querySelector(`section.${sectionClass}`);
-    console.log(section);
     const scrollTo = section.offsetTop;
     window.scrollTo(0, scrollTo);
     this.handleClick();

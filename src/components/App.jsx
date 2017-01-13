@@ -1,5 +1,5 @@
 import React from 'react';
-import Intro from './intro';
+import Home from './home';
 import NavButton from './nav_button';
 import About from './About';
 import Projects from './projects';
@@ -8,7 +8,7 @@ import Footer from './footer';
 
 const App = () =>
   <div>
-    <Intro />
+    <Home />
     <NavButton />
     <About />
     <Projects />
