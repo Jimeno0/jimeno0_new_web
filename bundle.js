@@ -58,7 +58,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(186);
+	__webpack_require__(187);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21495,23 +21495,23 @@
 
 	var _intro2 = _interopRequireDefault(_intro);
 
-	var _nav_button = __webpack_require__(180);
+	var _nav_button = __webpack_require__(181);
 
 	var _nav_button2 = _interopRequireDefault(_nav_button);
 
-	var _About = __webpack_require__(181);
+	var _About = __webpack_require__(182);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _projects = __webpack_require__(182);
+	var _projects = __webpack_require__(183);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _skills = __webpack_require__(184);
+	var _skills = __webpack_require__(185);
 
 	var _skills2 = _interopRequireDefault(_skills);
 
-	var _footer = __webpack_require__(185);
+	var _footer = __webpack_require__(186);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -21535,58 +21535,226 @@
 /* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _scroll_animation = __webpack_require__(180);
+
+	var _scroll_animation2 = _interopRequireDefault(_scroll_animation);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Intro = function Intro() {
-	  return _react2.default.createElement(
-	    "section",
-	    { className: "intro" },
-	    _react2.default.createElement(
-	      "div",
-	      null,
-	      _react2.default.createElement(
-	        "div",
-	        null,
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Intro = function (_Component) {
+	  _inherits(Intro, _Component);
+
+	  function Intro() {
+	    _classCallCheck(this, Intro);
+
+	    return _possibleConstructorReturn(this, (Intro.__proto__ || Object.getPrototypeOf(Intro)).apply(this, arguments));
+	  }
+
+	  _createClass(Intro, [{
+	    key: 'goToAbout',
+	    value: function goToAbout() {
+	      console.log('clicked!');
+	      var about = document.querySelector('section.about');
+	      // window.requestAnimFrame = (function () {
+	      //   return  window.requestAnimationFrame       ||
+	      //           window.webkitRequestAnimationFrame ||
+	      //           window.mozRequestAnimationFrame    ||
+	      //           function( callback ){
+	      //             window.setTimeout(callback, 1000 / 60);
+	      //           };
+	      // }());
+	      //
+	      // // main function
+	      // function scrollToY(scrollTargetY, speed, easing) {
+	      //     // scrollTargetY: the target scrollY property of the window
+	      //     // speed: time in pixels per second
+	      //     // easing: easing equation to use
+	      //
+	      //   var scrollY = window.scrollY || document.documentElement.scrollTop,
+	      //       scrollTargetY = scrollTargetY || 0,
+	      //       speed = speed || 2000,
+	      //       easing = easing || 'easeOutSine',
+	      //       currentTime = 0;
+	      //
+	      //   // min time .1, max time .8 seconds
+	      //   var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+	      //
+	      //   // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+	      //   var easingEquations = {
+	      //     easeOutSine: function (pos) {
+	      //       return Math.sin(pos * (Math.PI / 2));
+	      //     },
+	      //     easeInOutSine: function (pos) {
+	      //       return (-0.5 * (Math.cos(Math.PI * pos) - 1));
+	      //     },
+	      //     easeInOutQuint: function (pos) {
+	      //       if ((pos /= 0.5) < 1) {
+	      //         return 0.5 * Math.pow(pos, 5);
+	      //       }
+	      //       return 0.5 * (Math.pow((pos - 2), 5) + 2);
+	      //     }
+	      //   };
+	      //
+	      //   // add animation loop
+	      //   function tick() {
+	      //     currentTime += 1 / 60;
+	      //
+	      //     var p = currentTime / time;
+	      //     var t = easingEquations[easing](p);
+	      //
+	      //     if (p < 1) {
+	      //       requestAnimFrame(tick);
+	      //
+	      //       window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
+	      //     } else {
+	      //       console.log('scroll done');
+	      //       window.scrollTo(0, scrollTargetY);
+	      //     }
+	      //   }
+	      //   // call it once to get started
+	      //   tick();
+	      // }
+	      // // scroll it!
+	      (0, _scroll_animation2.default)(about.offsetTop, 150, 'easeInOutQuint');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'intro' },
 	        _react2.default.createElement(
-	          "h1",
+	          'div',
 	          null,
-	          "Hi, I'm ",
 	          _react2.default.createElement(
-	            "a",
-	            { href: "www.github.com/jimeno0" },
-	            "Jimeno0"
-	          )
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              'Hi, I\'m ',
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'www.github.com/jimeno0' },
+	                'Jimeno0'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'A full stack developer'
+	            )
+	          ),
+	          _react2.default.createElement('img', { className: 'logo', src: 'src/images/jimeno0_logo.svg', alt: 'logo' })
 	        ),
 	        _react2.default.createElement(
-	          "h3",
-	          null,
-	          "A full stack developer"
+	          'svg',
+	          { onClick: function onClick() {
+	              return _this2.goToAbout();
+	            }, width: '44px', height: '24px', viewBox: '259 410 44 24' },
+	          _react2.default.createElement('polyline', {
+	            id: 'Path-2', stroke: '#979797', strokeWidth: '2', fill: 'none',
+	            points: '260 411 280.968527 431.968527 301.775324 411.16173'
+	          })
 	        )
-	      ),
-	      _react2.default.createElement("img", { className: "logo", src: "src/images/jimeno0_logo.svg", alt: "logo" })
-	    ),
-	    _react2.default.createElement(
-	      "svg",
-	      { width: "44px", height: "24px", viewBox: "259 410 44 24" },
-	      _react2.default.createElement("polyline", { id: "Path-2", stroke: "#979797", strokeWidth: "2", fill: "none", points: "260 411 280.968527 431.968527 301.775324 411.16173" })
-	    )
-	  );
-	};
+	      );
+	    }
+	  }]);
+
+	  return Intro;
+	}(_react.Component);
 
 	exports.default = Intro;
 
 /***/ },
 /* 180 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// requestAnimFrame compatibility crossbrowsers
+	window.requestAnimFrame = function () {
+	  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+	    window.setTimeout(callback, 1000 / 60);
+	  };
+	}();
+
+	// main function
+	var ScrollToY = function ScrollToY(scrollTargetYparam, speedParam, easingParam) {
+	  // scrollTargetY: the target scrollY property of the window
+	  // speed: time in pixels per second
+	  // easing: easing equation to use
+	  var scrollY = window.scrollY || document.documentElement.scrollTop;
+	  var scrollTargetY = scrollTargetYparam || 0;
+	  var speed = speedParam || 2000;
+	  var easing = easingParam || 'easeOutSine';
+	  var currentTime = 0;
+
+	  // min time .1, max time .8 seconds
+	  var time = Math.max(0.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, 0.8));
+
+	  // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+	  var easingEquations = {
+	    easeOutSine: function easeOutSine(pos) {
+	      return Math.sin(pos * (Math.PI / 2));
+	    },
+	    easeInOutSine: function easeInOutSine(pos) {
+	      return -0.5 * (Math.cos(Math.PI * pos) - 1);
+	    },
+	    easeInOutQuint: function easeInOutQuint(pos) {
+	      var newPos = pos / 0.5;
+	      if (newPos < 1) {
+	        // return 0.5 * Math.pow(newPos, 5);
+	        return 0.5 * Math.pow(newPos, 5);
+	      }
+	      return 0.5 * (Math.pow(newPos - 2, 5) + 2);
+	    }
+	  };
+
+	  // add animation loop
+	  function tick() {
+	    currentTime += 1 / 60;
+	    var p = currentTime / time;
+	    var t = easingEquations[easing](p);
+
+	    if (p < 1) {
+	      window.requestAnimFrame(tick);
+	      window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
+	    } else {
+	      window.scrollTo(0, scrollTargetY);
+	    }
+	  }
+	  // call it once to get started
+	  tick();
+	};
+
+	exports.default = ScrollToY;
+
+/***/ },
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21639,7 +21807,6 @@
 	      var section = document.querySelector('section.' + sectionClass);
 	      var scrollTo = section.offsetTop;
 	      window.scrollTo(0, scrollTo);
-	      console.log(section);
 	      this.handleClick();
 	    }
 	  }, {
@@ -21721,7 +21888,7 @@
 	exports.default = NavButton;
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21787,7 +21954,7 @@
 	exports.default = About;
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21802,7 +21969,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _card = __webpack_require__(183);
+	var _card = __webpack_require__(184);
 
 	var _card2 = _interopRequireDefault(_card);
 
@@ -21869,7 +22036,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21941,7 +22108,7 @@
 	exports.default = Card;
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22028,7 +22195,7 @@
 	exports.default = Skills;
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22087,16 +22254,16 @@
 	exports.default = Footer;
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(187);
+	var content = __webpack_require__(188);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(189)(content, {});
+	var update = __webpack_require__(190)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22113,10 +22280,10 @@
 	}
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(188)();
+	exports = module.exports = __webpack_require__(189)();
 	// imports
 
 
@@ -22127,7 +22294,7 @@
 
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports) {
 
 	/*
@@ -22183,7 +22350,7 @@
 
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
