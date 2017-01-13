@@ -58,7 +58,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(187);
+	__webpack_require__(188);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17154,7 +17154,7 @@
 
 	  enqueueElementInternal: function (internalInstance, nextElement, nextContext) {
 	    internalInstance._pendingElement = nextElement;
-	    // TODO: homeduce _pendingContext instead of setting it directly.
+	    // TODO: introduce _pendingContext instead of setting it directly.
 	    internalInstance._context = nextContext;
 	    enqueueUpdate(internalInstance);
 	  },
@@ -21495,23 +21495,23 @@
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _nav_button = __webpack_require__(181);
+	var _nav_button = __webpack_require__(182);
 
 	var _nav_button2 = _interopRequireDefault(_nav_button);
 
-	var _About = __webpack_require__(182);
+	var _About = __webpack_require__(183);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _projects = __webpack_require__(183);
+	var _projects = __webpack_require__(184);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _skills = __webpack_require__(185);
+	var _skills = __webpack_require__(186);
 
 	var _skills2 = _interopRequireDefault(_skills);
 
-	var _footer = __webpack_require__(186);
+	var _footer = __webpack_require__(187);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -21547,7 +21547,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _scroll_animation = __webpack_require__(180);
+	var _contact_icons = __webpack_require__(180);
+
+	var _contact_icons2 = _interopRequireDefault(_contact_icons);
+
+	var _scroll_animation = __webpack_require__(181);
 
 	var _scroll_animation2 = _interopRequireDefault(_scroll_animation);
 
@@ -21559,80 +21563,19 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var home = function (_Component) {
-	  _inherits(home, _Component);
+	var Home = function (_Component) {
+	  _inherits(Home, _Component);
 
-	  function home() {
-	    _classCallCheck(this, home);
+	  function Home() {
+	    _classCallCheck(this, Home);
 
-	    return _possibleConstructorReturn(this, (home.__proto__ || Object.getPrototypeOf(home)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
 	  }
 
-	  _createClass(home, [{
+	  _createClass(Home, [{
 	    key: 'goToAbout',
 	    value: function goToAbout() {
-	      console.log('clicked!');
 	      var about = document.querySelector('section.about');
-	      // window.requestAnimFrame = (function () {
-	      //   return  window.requestAnimationFrame       ||
-	      //           window.webkitRequestAnimationFrame ||
-	      //           window.mozRequestAnimationFrame    ||
-	      //           function( callback ){
-	      //             window.setTimeout(callback, 1000 / 60);
-	      //           };
-	      // }());
-	      //
-	      // // main function
-	      // function scrollToY(scrollTargetY, speed, easing) {
-	      //     // scrollTargetY: the target scrollY property of the window
-	      //     // speed: time in pixels per second
-	      //     // easing: easing equation to use
-	      //
-	      //   var scrollY = window.scrollY || document.documentElement.scrollTop,
-	      //       scrollTargetY = scrollTargetY || 0,
-	      //       speed = speed || 2000,
-	      //       easing = easing || 'easeOutSine',
-	      //       currentTime = 0;
-	      //
-	      //   // min time .1, max time .8 seconds
-	      //   var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
-	      //
-	      //   // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
-	      //   var easingEquations = {
-	      //     easeOutSine: function (pos) {
-	      //       return Math.sin(pos * (Math.PI / 2));
-	      //     },
-	      //     easeInOutSine: function (pos) {
-	      //       return (-0.5 * (Math.cos(Math.PI * pos) - 1));
-	      //     },
-	      //     easeInOutQuint: function (pos) {
-	      //       if ((pos /= 0.5) < 1) {
-	      //         return 0.5 * Math.pow(pos, 5);
-	      //       }
-	      //       return 0.5 * (Math.pow((pos - 2), 5) + 2);
-	      //     }
-	      //   };
-	      //
-	      //   // add animation loop
-	      //   function tick() {
-	      //     currentTime += 1 / 60;
-	      //
-	      //     var p = currentTime / time;
-	      //     var t = easingEquations[easing](p);
-	      //
-	      //     if (p < 1) {
-	      //       requestAnimFrame(tick);
-	      //
-	      //       window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
-	      //     } else {
-	      //       console.log('scroll done');
-	      //       window.scrollTo(0, scrollTargetY);
-	      //     }
-	      //   }
-	      //   // call it once to get started
-	      //   tick();
-	      // }
-	      // // scroll it!
 	      (0, _scroll_animation2.default)(about.offsetTop, 150, 'easeInOutQuint');
 	    }
 	  }, {
@@ -21643,6 +21586,7 @@
 	      return _react2.default.createElement(
 	        'section',
 	        { className: 'home' },
+	        _react2.default.createElement(_contact_icons2.default, null),
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -21652,7 +21596,9 @@
 	            _react2.default.createElement(
 	              'h1',
 	              null,
-	              'Hi, I\'m ',
+	              'Hi',
+	              _react2.default.createElement('br', null),
+	              'I\'m ',
 	              _react2.default.createElement(
 	                'a',
 	                { href: 'www.github.com/jimeno0' },
@@ -21660,7 +21606,7 @@
 	              )
 	            ),
 	            _react2.default.createElement(
-	              'h3',
+	              'p',
 	              null,
 	              'A full stack developer'
 	            )
@@ -21681,13 +21627,57 @@
 	    }
 	  }]);
 
-	  return home;
+	  return Home;
 	}(_react.Component);
 
-	exports.default = home;
+	exports.default = Home;
 
 /***/ },
 /* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Icons = function Icons() {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "contact-icons" },
+	    _react2.default.createElement(
+	      "a",
+	      { href: "https://github.com/Jimeno0/" },
+	      _react2.default.createElement("img", { src: "src/images/github-logo.svg", alt: "github link" })
+	    ),
+	    _react2.default.createElement(
+	      "a",
+	      { href: "https://twitter.com/jimeno0" },
+	      _react2.default.createElement("img", { src: "src/images/twitter-logo.svg", alt: "twitter link" })
+	    ),
+	    _react2.default.createElement(
+	      "a",
+	      { href: "https://www.linkedin.com/in/carlos-perez-jimeno" },
+	      _react2.default.createElement("img", { src: "src/images/linkedin-logo.svg", alt: "linkedin link" })
+	    ),
+	    _react2.default.createElement(
+	      "a",
+	      { href: "mailto:c.p.jimeno0@gmail.com" },
+	      _react2.default.createElement("img", { src: "src/images/mail-logo.svg", alt: "mail link" })
+	    )
+	  );
+	};
+	exports.default = Icons;
+
+/***/ },
+/* 181 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21754,7 +21744,7 @@
 	exports.default = ScrollToY;
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21768,6 +21758,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _scroll_animation = __webpack_require__(181);
+
+	var _scroll_animation2 = _interopRequireDefault(_scroll_animation);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21806,8 +21800,9 @@
 	      var sectionClass = event.currentTarget.dataset.section;
 	      var section = document.querySelector('section.' + sectionClass);
 	      var scrollTo = section.offsetTop;
-	      window.scrollTo(0, scrollTo);
+	      // window.scrollTo(0, scrollTo);
 	      this.handleClick();
+	      (0, _scroll_animation2.default)(scrollTo);
 	    }
 	  }, {
 	    key: 'renderIcon',
@@ -21822,6 +21817,16 @@
 	    value: function render() {
 	      var _this2 = this;
 
+	      var sections = ['home', 'about', 'projects', 'skills'];
+	      var sectionsNodes = sections.map(function (section) {
+	        return _react2.default.createElement(
+	          'li',
+	          { key: section, 'data-section': section, onClick: function onClick(e) {
+	              return _this2.handleGoTo(e);
+	            } },
+	          section.toUpperCase()
+	        );
+	      });
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'menu-button-component' },
@@ -21840,34 +21845,7 @@
 	        _react2.default.createElement(
 	          'ul',
 	          { className: 'menu-modal' },
-	          _react2.default.createElement(
-	            'li',
-	            { 'data-section': 'about', onClick: function onClick(e) {
-	                return _this2.handleGoTo(e);
-	              } },
-	            'ABOUT'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            { 'data-section': 'projects', onClick: function onClick(e) {
-	                return _this2.handleGoTo(e);
-	              } },
-	            'PROJECTS'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            { 'data-section': 'skills', onClick: function onClick(e) {
-	                return _this2.handleGoTo(e);
-	              } },
-	            'SKILLS'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            { 'data-section': 'home', onClick: function onClick(e) {
-	                return _this2.handleGoTo(e);
-	              } },
-	            'CONTACT'
-	          ),
+	          sectionsNodes,
 	          _react2.default.createElement(
 	            'li',
 	            null,
@@ -21888,7 +21866,7 @@
 	exports.default = NavButton;
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21919,7 +21897,7 @@
 	      _react2.default.createElement(
 	        "p",
 	        null,
-	        "Hi Im Carlos P. Jimeno AKA ",
+	        "My name is Carlos P. Jimeno AKA ",
 	        _react2.default.createElement(
 	          "a",
 	          { href: "https://twitter.com/jimeno0" },
@@ -21954,7 +21932,7 @@
 	exports.default = About;
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21969,7 +21947,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _card = __webpack_require__(184);
+	var _card = __webpack_require__(185);
 
 	var _card2 = _interopRequireDefault(_card);
 
@@ -22036,7 +22014,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22068,7 +22046,11 @@
 	      null,
 	      name
 	    ),
-	    _react2.default.createElement("img", { src: image, alt: name }),
+	    _react2.default.createElement(
+	      "a",
+	      { href: web },
+	      _react2.default.createElement("img", { src: image, alt: name })
+	    ),
 	    _react2.default.createElement(
 	      "div",
 	      null,
@@ -22082,7 +22064,7 @@
 	      "div",
 	      null,
 	      _react2.default.createElement(
-	        "h3",
+	        "h4",
 	        null,
 	        "Technologies"
 	      ),
@@ -22095,7 +22077,7 @@
 	    _react2.default.createElement(
 	      "a",
 	      { href: github },
-	      _react2.default.createElement("img", { src: "src/images/github-logo.svg", alt: "github link" })
+	      _react2.default.createElement("img", { className: "icon", src: "src/images/github-logo.svg", alt: "github link" })
 	    ),
 	    _react2.default.createElement("hr", null)
 	  );
@@ -22108,7 +22090,7 @@
 	exports.default = Card;
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22195,10 +22177,10 @@
 	exports.default = Skills;
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -22208,44 +22190,25 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _contact_icons = __webpack_require__(180);
+
+	var _contact_icons2 = _interopRequireDefault(_contact_icons);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Footer = function Footer() {
 	  return _react2.default.createElement(
-	    "footer",
+	    'footer',
 	    null,
+	    _react2.default.createElement(_contact_icons2.default, null),
 	    _react2.default.createElement(
-	      "div",
-	      { className: "icons" },
-	      _react2.default.createElement(
-	        "a",
-	        { href: "https://github.com/Jimeno0/" },
-	        _react2.default.createElement("img", { src: "src/images/github-logo.svg", alt: "github link" })
-	      ),
-	      _react2.default.createElement(
-	        "a",
-	        { href: "https://twitter.com/jimeno0" },
-	        _react2.default.createElement("img", { src: "src/images/twitter-logo.svg", alt: "twitter link" })
-	      ),
-	      _react2.default.createElement(
-	        "a",
-	        { href: "https://www.linkedin.com/in/carlos-perez-jimeno" },
-	        _react2.default.createElement("img", { src: "src/images/linkedin-logo.svg", alt: "linkedin link" })
-	      ),
-	      _react2.default.createElement(
-	        "a",
-	        null,
-	        _react2.default.createElement("img", { src: "src/images/mail-logo.svg", alt: "mail link" })
-	      )
-	    ),
-	    _react2.default.createElement(
-	      "p",
+	      'p',
 	      null,
-	      "Designed with \u2665\uFE0F by ",
+	      'Designed with \u2665\uFE0F by ',
 	      _react2.default.createElement(
-	        "a",
-	        { href: "https://twitter.com/jimeno0" },
-	        "jimeno0"
+	        'a',
+	        { href: 'https://twitter.com/jimeno0' },
+	        'jimeno0'
 	      )
 	    )
 	  );
@@ -22254,16 +22217,16 @@
 	exports.default = Footer;
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(188);
+	var content = __webpack_require__(189);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(190)(content, {});
+	var update = __webpack_require__(191)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22280,21 +22243,21 @@
 	}
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(189)();
+	exports = module.exports = __webpack_require__(190)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "html {\n  font-size: 10px; }\n\nbody {\n  font-family: helvetica;\n  margin: 0px; }\n\nh1, h2 {\n  margin: 2rem 0;\n  font-size: 3rem;\n  font-weight: 400; }\n\nh3 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 100; }\n\np {\n  font-size: 1.6rem;\n  font-weight: 100;\n  text-align: center; }\n\nsection {\n  padding: 2rem 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  box-sizing: border-box; }\n\na {\n  color: #42ab9e;\n  text-decoration: none;\n  font-size: 1.6rem; }\n\nhr {\n  width: 9rem;\n  border: none;\n  border-bottom: 1px solid #42ab9e; }\n\nsection.home {\n  height: 100vh;\n  justify-content: space-between; }\n  section.home > div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    height: 70vh; }\n  section.home a {\n    font-size: 3rem; }\n  section.home img.logo {\n    width: 12rem; }\n  section.home img.down-row {\n    width: 2rem; }\n  section.home button {\n    font-size: 2rem;\n    border: none;\n    border-bottom: 2px solid #42ab9e;\n    background-color: transparent;\n    padding: 0.6rem 1.7rem;\n    font-weight: 100; }\n  section.home svg polyline {\n    stroke-width: .3rem;\n    stroke: black;\n    animation-name: greenBlack;\n    animation-duration: 3s;\n    animation-iteration-count: infinite; }\n\n@keyframes greenBlack {\n  0% {\n    stroke: #42ab9e; }\n  50% {\n    stroke: #eee; }\n  100% {\n    stroke: #42ab9e; } }\n\n.menu-button-component img {\n  position: fixed;\n  top: 2.0rem;\n  left: 1.5rem;\n  z-index: 1; }\n\n.menu-modal {\n  position: fixed;\n  top: 0px;\n  background-color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  list-style: none;\n  font-size: 2rem;\n  opacity: 0;\n  transition: all .5s;\n  transform: translateX(-60%); }\n  .menu-modal li {\n    color: #42ab9e;\n    padding: 2rem 0rem; }\n    .menu-modal li a {\n      font-size: 2rem; }\n\n.menu-modal.active {\n  opacity: 1;\n  transform: translateX(0%); }\n\n/**\n * Toggle Switch Globals\n *\n * All switches should take on the class `c-hamburger` as well as their\n * variant that will give them unique properties. This class is an overview\n * class that acts as a reset for all versions of the icon.\n */\n.c-hamburger {\n  display: block;\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 35px;\n  height: 30px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  background-color: transparent;\n  position: fixed;\n  top: 3.5rem;\n  left: 2.9rem;\n  z-index: 1; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 13.5px;\n  left: 2px;\n  right: 2px;\n  height: 3px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 3px;\n  background-color: white;\n  content: \"\"; }\n\n.c-hamburger span::before {\n  top: -10px; }\n\n.c-hamburger span::after {\n  bottom: -10px; }\n\n.c-hamburger span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger span::before {\n  transition-property: top, transform; }\n\n.c-hamburger span::after {\n  transition-property: bottom, transform; }\n\n/* active state, i.e. menu open */\n.c-hamburger.is-active span {\n  background: none; }\n\n.c-hamburger.is-active span::before {\n  top: 0;\n  transform: rotate(45deg); }\n\n.c-hamburger.is-active span::after {\n  bottom: 0;\n  transform: rotate(-45deg); }\n\n.c-hamburger.is-active span::before,\n.c-hamburger.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\nsection.about {\n  height: 100vh;\n  background-color: #42ab9e;\n  color: white;\n  padding-top: 9rem;\n  justify-content: initial; }\n  section.about h2 {\n    font-size: 3rem; }\n  section.about div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n  section.about a {\n    color: #ACD7EC; }\n\nsection.projects article {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 2rem 1rem;\n  box-sizing: border-box;\n  margin-bottom: 2rem;\n  background-color: white; }\n  section.projects article img {\n    width: 100%; }\n    section.projects article img:last-child {\n      width: 2rem; }\n  section.projects article div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin: 2rem 0; }\n    section.projects article div p {\n      margin-top: 0px; }\n\nsvg {\n  color: black; }\n\nsection.projects {\n  display: flex;\n  padding: 0;\n  background-color: #eee; }\n  section.projects h2 {\n    margin-top: 6rem; }\n\nsection.skills {\n  height: 100vh; }\n  section.skills h2 {\n    margin-top: 6rem; }\n  section.skills div {\n    text-align: center; }\n\nfooter {\n  height: 20vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n  footer .icons {\n    display: flex;\n    justify-content: space-around;\n    margin: 1rem; }\n", ""]);
+	exports.push([module.id, "html {\n  font-size: 10px; }\n\nbody {\n  font-family: helvetica;\n  margin: 0px; }\n\nh1, h2 {\n  margin: 2rem 0;\n  font-size: 3rem;\n  font-weight: 400; }\n\nh3 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 400; }\n\nh4 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 300; }\n\np {\n  font-size: 1.6rem;\n  font-weight: 200;\n  text-align: center; }\n\nsection {\n  padding: 2rem 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  box-sizing: border-box; }\n\na {\n  color: #42ab9e;\n  text-decoration: none;\n  font-size: 1.6rem; }\n\nhr {\n  width: 9rem;\n  border: none;\n  border-bottom: 1px solid #42ab9e; }\n\nsection.home {\n  height: 100vh;\n  justify-content: space-between; }\n  section.home > div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    height: 70vh; }\n  section.home h1 {\n    text-align: center; }\n  section.home a {\n    font-size: 3rem; }\n  section.home img.logo {\n    width: 12rem; }\n  section.home img.down-row {\n    width: 2rem; }\n  section.home button {\n    font-size: 2rem;\n    border: none;\n    border-bottom: 2px solid #42ab9e;\n    background-color: transparent;\n    padding: 0.6rem 1.7rem;\n    font-weight: 100; }\n  section.home svg polyline {\n    stroke-width: .3rem;\n    stroke: black;\n    animation-name: greenBlack;\n    animation-duration: 3s;\n    animation-iteration-count: infinite; }\n\n@keyframes greenBlack {\n  0% {\n    stroke: #42ab9e; }\n  50% {\n    stroke: #eee; }\n  100% {\n    stroke: #42ab9e; } }\n\n.menu-button-component img {\n  position: fixed;\n  top: 20px;\n  left: 15px;\n  width: 50px;\n  z-index: 1; }\n\n.menu-modal {\n  position: fixed;\n  top: 0px;\n  background-color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  list-style: none;\n  font-size: 2rem;\n  opacity: 0;\n  transition: all .2s;\n  transition-timing-function: ease-in-out;\n  transform: translateX(-100%); }\n  .menu-modal li {\n    color: #42ab9e;\n    padding: 2rem 0rem; }\n    .menu-modal li a {\n      font-size: 2rem; }\n\n.menu-modal.active {\n  opacity: 1;\n  transform: translateX(0%); }\n\n/**\n * Toggle Switch Globals\n *\n * All switches should take on the class `c-hamburger` as well as their\n * variant that will give them unique properties. This class is an overview\n * class that acts as a reset for all versions of the icon.\n */\n.c-hamburger {\n  display: block;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 31px;\n  height: 30px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  background-color: transparent;\n  position: fixed;\n  top: 30px;\n  left: 25px;\n  z-index: 1; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 13.5px;\n  left: 2px;\n  right: 2px;\n  height: 3px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 3px;\n  background-color: white;\n  content: \"\"; }\n\n.c-hamburger span::before {\n  top: -8px; }\n\n.c-hamburger span::after {\n  bottom: -8px; }\n\n.c-hamburger span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger span::before {\n  transition-property: top, transform; }\n\n.c-hamburger span::after {\n  transition-property: bottom, transform; }\n\n/* active state, i.e. menu open */\n.c-hamburger.is-active span {\n  background: none; }\n\n.c-hamburger.is-active span::before {\n  top: 0;\n  transform: rotate(45deg); }\n\n.c-hamburger.is-active span::after {\n  bottom: 0;\n  transform: rotate(-45deg); }\n\n.c-hamburger.is-active span::before,\n.c-hamburger.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\nsection.about {\n  height: 100vh;\n  background-color: #42ab9e;\n  color: white;\n  padding-top: 9rem;\n  justify-content: initial; }\n  section.about h2 {\n    font-size: 3rem; }\n  section.about div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n  section.about a {\n    color: #ACD7EC; }\n\nsection.projects article {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 2rem 1rem;\n  box-sizing: border-box;\n  margin-bottom: 2rem;\n  background-color: white; }\n  section.projects article img {\n    width: 100%; }\n    section.projects article img.icon {\n      width: 3rem; }\n  section.projects article div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin: 2rem 0; }\n    section.projects article div p {\n      margin-top: 0px; }\n\nsvg {\n  color: black; }\n\nsection.projects {\n  display: flex;\n  padding: 0;\n  background-color: #eee; }\n  section.projects h2 {\n    margin-top: 6rem; }\n\nsection.skills {\n  height: 100vh; }\n  section.skills h2 {\n    margin-top: 6rem; }\n  section.skills div {\n    text-align: center; }\n\nfooter {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n  footer .contact-icons {\n    display: flex;\n    justify-content: center; }\n    footer .contact-icons img {\n      margin: 0  2rem; }\n\nsection.home div.contact-icons {\n  position: absolute;\n  transform: translateY(-50%);\n  top: 50vh;\n  left: 30px;\n  height: 30vh; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports) {
 
 	/*
@@ -22350,7 +22313,7 @@
 
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
