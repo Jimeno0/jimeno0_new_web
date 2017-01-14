@@ -1,0 +1,30 @@
+nav {
+  display: none;
+  padding: 10px;
+}
+@media (min-width: 700px) {
+  section.home{
+    nav {
+      display: flex;
+      &.nav-fixed{
+      position: fixed;
+      top: 0px;
+      }
+      a{
+        text-transform:capitalize;
+        font-size: $h2-size;
+        color: black;
+        padding: 0 2rem;
+        border-right: 1px solid black;
+        &:last-child {
+          border-right: none;
+        }
+        &:hover {
+          color: $brand-color;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+}

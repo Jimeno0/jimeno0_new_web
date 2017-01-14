@@ -152,3 +152,12 @@ $button-transistion-duration: 0.3s;     // The transition duration
 .c-hamburger.is-active span::after {
   transition-delay: 0s, $button-transistion-duration;
 }
+
+@media (min-width: 700px) {
+  .menu-button-component {
+    display: none;
+  }
+  .menu-modal {
+    display: none;
+  }
+}

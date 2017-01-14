@@ -5,3 +5,9 @@ section.home div.contact-icons {
   left:30px;
   height: 30vh;
 }
+
+@media (min-width: 700px) {
+  section.home div.contact-icons {
+    position: fixed;  
+  }
+}
