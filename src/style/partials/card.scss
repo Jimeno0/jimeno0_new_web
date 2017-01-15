@@ -26,6 +26,13 @@ section.projects article{
   a {
     margin: 1em;
   }
+  span::after {
+    content: " · ";
+    color: $brand-color;
+  }
+  span:last-child::after {
+    content: "";
+  }
 }
 
 svg {
