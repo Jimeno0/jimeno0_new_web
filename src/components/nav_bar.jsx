@@ -31,7 +31,7 @@ class NavBar extends Component {
     const sectionClass = event.currentTarget.dataset.section;
     const section = document.querySelector(`section.${sectionClass}`);
     const scrollTo = section.offsetTop;
-    scrollToY(scrollTo);
+    scrollToY(scrollTo, 150, 'easeInOutQuint');
   }
   render() {
     const sections = ['about', 'projects', 'skills'];

@@ -1,8 +1,9 @@
 section.home{
   div.nav-container {
+    z-index: 1;
     display: none;
     nav {
-      padding: 1rem 0;
+      padding: 2rem 0;
       width: 100%;
       background: #FFF;
     }
@@ -30,6 +31,9 @@ section.home{
           left: 0px;
           transform: translateX(-100%);
           transition: all 0.3s;
+          img {
+            transform: scale(2.1);
+          }
           &.logo-active{
             transform: translateX(0%);
           }
