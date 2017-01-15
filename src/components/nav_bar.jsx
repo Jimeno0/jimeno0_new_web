@@ -4,9 +4,12 @@ import scrollToY from '../helpers/scroll_animation';
 class NavBar extends Component {
   componentDidMount() {
     const navBar = document.querySelector('.nav-container');
+    const navBarLog = document.querySelector('a.home');
+    const aboutSection = document.querySelector('section.about');
     const navBarPos = navBar.getBoundingClientRect();
-    // const navBarTop = navBarPos.top;
-    const navBarTop = navBar.offsetTop;
+    const navBarTop = navBarPos.top;
+    const aboutPos = aboutSection.getBoundingClientRect();
+    const aboutTop = aboutPos.top;
 
     function handleScroll() {
       const scrolled = window.scrollY;
@@ -14,6 +17,12 @@ class NavBar extends Component {
         navBar.classList.add('nav-fixed');
       } else {
         navBar.classList.remove('nav-fixed');
+      }
+
+      if (scrolled >= aboutTop) {
+        navBarLog.classList.add('logo-active');
+      } else {
+        navBarLog.classList.remove('logo-active');
       }
     }
     window.addEventListener('scroll', handleScroll);

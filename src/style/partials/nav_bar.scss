@@ -1,22 +1,39 @@
-nav {
-  display: none;
-  padding: 1rem;
-  width: 100%;
-  background: #FFF;
+section.home{
+  div.nav-container {
+    display: none;
+    nav {
+      padding: 1rem 0;
+      width: 100%;
+      background: #FFF;
+    }
+  }
 }
+
 @media (min-width: 700px) {
   section.home{
     & > div {
-      height: 70vh;
-
       &.nav-container {
+        display: flex;
         height: initial;
+        a.home{
+          display: none;
+        }
       }
       &.nav-fixed{
         position: fixed;
         top: 0px;
         display: inline-block;
         width: 100%;
+        a.home{
+          position: absolute;
+          display: block;
+          left: 0px;
+          transform: translateX(-100%);
+          transition: all 0.3s;
+          &.logo-active{
+            transform: translateX(0%);
+          }
+        }
       }
     }
     nav {
@@ -44,9 +61,7 @@ nav {
           color: $brand-color;
           cursor: pointer;
         }
-
       }
-
     }
   }
 }
