@@ -1,9 +1,35 @@
 section.projects {
+  min-height: 100vh;
   display: flex;
-  padding: 0;
+  padding: 3rem 0;
   background-color: $gray-color;
 
   h2 {
     margin-top: 6rem;
+  }
+}
+
+@media (min-width:700px) {
+  section.projects {
+    div.articles {
+      margin: 8rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      article {
+        max-width: 60vw;
+      }
+    }
+  }
+}
+
+@media (min-width:1000px) {
+  section.projects {
+    div.articles {
+      article {
+        max-width: 40vw;
+      }
+    }
   }
 }

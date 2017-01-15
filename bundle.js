@@ -58,7 +58,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(188);
+	__webpack_require__(189);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21495,23 +21495,23 @@
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _nav_button = __webpack_require__(182);
+	var _nav_button = __webpack_require__(183);
 
 	var _nav_button2 = _interopRequireDefault(_nav_button);
 
-	var _About = __webpack_require__(183);
+	var _About = __webpack_require__(184);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _projects = __webpack_require__(184);
+	var _projects = __webpack_require__(185);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _skills = __webpack_require__(186);
+	var _skills = __webpack_require__(187);
 
 	var _skills2 = _interopRequireDefault(_skills);
 
-	var _footer = __webpack_require__(187);
+	var _footer = __webpack_require__(188);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -21521,8 +21521,8 @@
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    _react2.default.createElement(_home2.default, null),
 	    _react2.default.createElement(_nav_button2.default, null),
+	    _react2.default.createElement(_home2.default, null),
 	    _react2.default.createElement(_About2.default, null),
 	    _react2.default.createElement(_projects2.default, null),
 	    _react2.default.createElement(_skills2.default, null),
@@ -21551,7 +21551,11 @@
 
 	var _contact_icons2 = _interopRequireDefault(_contact_icons);
 
-	var _scroll_animation = __webpack_require__(181);
+	var _nav_bar = __webpack_require__(181);
+
+	var _nav_bar2 = _interopRequireDefault(_nav_bar);
+
+	var _scroll_animation = __webpack_require__(182);
 
 	var _scroll_animation2 = _interopRequireDefault(_scroll_animation);
 
@@ -21613,6 +21617,7 @@
 	          ),
 	          _react2.default.createElement('img', { className: 'logo', src: 'src/images/jimeno0_logo.svg', alt: 'logo' })
 	        ),
+	        _react2.default.createElement(_nav_bar2.default, null),
 	        _react2.default.createElement(
 	          'svg',
 	          { onClick: function onClick() {
@@ -21678,6 +21683,122 @@
 
 /***/ },
 /* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _scroll_animation = __webpack_require__(182);
+
+	var _scroll_animation2 = _interopRequireDefault(_scroll_animation);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NavBar = function (_Component) {
+	  _inherits(NavBar, _Component);
+
+	  function NavBar() {
+	    _classCallCheck(this, NavBar);
+
+	    return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).apply(this, arguments));
+	  }
+
+	  _createClass(NavBar, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var navBar = document.querySelector('.nav-container');
+	      var navBarLog = document.querySelector('a.home');
+	      var aboutSection = document.querySelector('section.about');
+	      var navBarPos = navBar.getBoundingClientRect();
+	      var navBarTop = navBarPos.top;
+	      var aboutPos = aboutSection.getBoundingClientRect();
+	      var aboutTop = aboutPos.top;
+
+	      function handleScroll() {
+	        var scrolled = window.scrollY;
+	        if (scrolled >= navBarTop) {
+	          navBar.classList.add('nav-fixed');
+	        } else {
+	          navBar.classList.remove('nav-fixed');
+	        }
+
+	        if (scrolled >= aboutTop) {
+	          navBarLog.classList.add('logo-active');
+	        } else {
+	          navBarLog.classList.remove('logo-active');
+	        }
+	      }
+	      window.addEventListener('scroll', handleScroll);
+	    }
+	  }, {
+	    key: 'handleGoTo',
+	    value: function handleGoTo(event) {
+	      var sectionClass = event.currentTarget.dataset.section;
+	      var section = document.querySelector('section.' + sectionClass);
+	      var scrollTo = section.offsetTop;
+	      (0, _scroll_animation2.default)(scrollTo, 150, 'easeInOutQuint');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var sections = ['about', 'projects', 'skills'];
+	      var sectionsNodes = sections.map(function (section) {
+	        return _react2.default.createElement(
+	          'a',
+	          { key: section, 'data-section': section, onClick: function onClick(e) {
+	              return _this2.handleGoTo(e);
+	            } },
+	          section.toUpperCase()
+	        );
+	      });
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'nav-container' },
+	        _react2.default.createElement(
+	          'nav',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'home', 'data-section': 'home', onClick: function onClick(e) {
+	                return _this2.handleGoTo(e);
+	              } },
+	            _react2.default.createElement('img', { src: 'src/images/jimeno0_logo.svg', alt: 'logo' })
+	          ),
+	          sectionsNodes,
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'https://medium.com/@jimeno0' },
+	            'BLOG'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return NavBar;
+	}(_react.Component);
+
+	exports.default = NavBar;
+
+/***/ },
+/* 182 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21744,7 +21865,7 @@
 	exports.default = ScrollToY;
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21759,7 +21880,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _scroll_animation = __webpack_require__(181);
+	var _scroll_animation = __webpack_require__(182);
 
 	var _scroll_animation2 = _interopRequireDefault(_scroll_animation);
 
@@ -21800,7 +21921,6 @@
 	      var sectionClass = event.currentTarget.dataset.section;
 	      var section = document.querySelector('section.' + sectionClass);
 	      var scrollTo = section.offsetTop;
-	      // window.scrollTo(0, scrollTo);
 	      this.handleClick();
 	      (0, _scroll_animation2.default)(scrollTo);
 	    }
@@ -21866,7 +21986,7 @@
 	exports.default = NavButton;
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21932,7 +22052,7 @@
 	exports.default = About;
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21947,7 +22067,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _card = __webpack_require__(185);
+	var _card = __webpack_require__(186);
 
 	var _card2 = _interopRequireDefault(_card);
 
@@ -22003,7 +22123,11 @@
 	          null,
 	          'PROJECTS'
 	        ),
-	        cards
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'articles' },
+	          cards
+	        )
 	      );
 	    }
 	  }]);
@@ -22014,7 +22138,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22038,6 +22162,13 @@
 	      github = _props$project.github,
 	      web = _props$project.web;
 
+	  var technologiesStyled = technologies.map(function (tech) {
+	    return _react2.default.createElement(
+	      "span",
+	      { key: tech },
+	      tech
+	    );
+	  });
 	  return _react2.default.createElement(
 	    "article",
 	    null,
@@ -22052,34 +22183,20 @@
 	      _react2.default.createElement("img", { src: image, alt: name })
 	    ),
 	    _react2.default.createElement(
-	      "div",
+	      "p",
 	      null,
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        description
-	      )
+	      description
 	    ),
 	    _react2.default.createElement(
-	      "div",
-	      null,
-	      _react2.default.createElement(
-	        "h4",
-	        null,
-	        "Technologies"
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        technologies
-	      )
+	      "p",
+	      { className: "technologies" },
+	      technologiesStyled
 	    ),
 	    _react2.default.createElement(
 	      "a",
 	      { href: github },
 	      _react2.default.createElement("img", { className: "icon", src: "src/images/github-logo.svg", alt: "github link" })
-	    ),
-	    _react2.default.createElement("hr", null)
+	    )
 	  );
 	};
 
@@ -22090,7 +22207,7 @@
 	exports.default = Card;
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22125,7 +22242,19 @@
 	      _react2.default.createElement(
 	        "p",
 	        null,
-	        "Javascript \xB7 HTML \xB7 CSS"
+	        "Javascript",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "HTML",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "CSS"
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -22139,7 +22268,13 @@
 	      _react2.default.createElement(
 	        "p",
 	        null,
-	        "Rails \xB7 Node"
+	        "Rails",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "Node"
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -22153,7 +22288,37 @@
 	      _react2.default.createElement(
 	        "p",
 	        null,
-	        "React \xB7 Redux \xB7 Webpack \xB7 Sass \xB7   Git \xB7 Postman"
+	        "React",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "Redux",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "Webpack",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "Sass",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "Git",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "Postman"
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -22167,7 +22332,13 @@
 	      _react2.default.createElement(
 	        "p",
 	        null,
-	        "Sketch \xB7 Illustrator"
+	        "Sketch",
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          " \xB7 "
+	        ),
+	        "Illustrator"
 	      )
 	    ),
 	    _react2.default.createElement("hr", null)
@@ -22177,7 +22348,7 @@
 	exports.default = Skills;
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22217,16 +22388,16 @@
 	exports.default = Footer;
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(189);
+	var content = __webpack_require__(190);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(191)(content, {});
+	var update = __webpack_require__(192)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22243,21 +22414,21 @@
 	}
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(190)();
+	exports = module.exports = __webpack_require__(191)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "html {\n  font-size: 10px; }\n\nbody {\n  font-family: helvetica;\n  margin: 0px; }\n\nh1, h2 {\n  margin: 2rem 0;\n  font-size: 3rem;\n  font-weight: 400; }\n\nh3 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 400; }\n\nh4 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 300; }\n\np {\n  font-size: 1.6rem;\n  font-weight: 300;\n  text-align: center; }\n\nsection {\n  padding: 2rem 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  box-sizing: border-box; }\n\na {\n  color: #42ab9e;\n  text-decoration: none;\n  font-size: 1.6rem; }\n\nhr {\n  width: 9rem;\n  border: none;\n  border-bottom: 1px solid #42ab9e; }\n\nsection.home {\n  height: 100vh;\n  justify-content: space-between; }\n  section.home > div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    height: 70vh; }\n  section.home h1 {\n    text-align: center; }\n  section.home a {\n    font-size: 3rem; }\n  section.home img.logo {\n    width: 12rem; }\n  section.home img.down-row {\n    width: 2rem; }\n  section.home button {\n    font-size: 2rem;\n    border: none;\n    border-bottom: 2px solid #42ab9e;\n    background-color: transparent;\n    padding: 0.6rem 1.7rem;\n    font-weight: 100; }\n  section.home svg polyline {\n    stroke-width: .3rem;\n    stroke: black;\n    animation-name: greenBlack;\n    animation-duration: 3s;\n    animation-iteration-count: infinite; }\n\n@keyframes greenBlack {\n  0% {\n    stroke: #42ab9e; }\n  50% {\n    stroke: #eee; }\n  100% {\n    stroke: #42ab9e; } }\n\n.menu-button-component img {\n  position: fixed;\n  top: 20px;\n  left: 15px;\n  width: 50px;\n  z-index: 1; }\n\n.menu-modal {\n  position: fixed;\n  top: 0px;\n  background-color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  list-style: none;\n  font-size: 2rem;\n  opacity: 0;\n  transition: all .2s;\n  transition-timing-function: ease-in-out;\n  transform: translateX(-100%); }\n  .menu-modal li {\n    color: #42ab9e;\n    padding: 2rem 0rem; }\n    .menu-modal li a {\n      font-size: 2rem; }\n\n.menu-modal.active {\n  opacity: 1;\n  transform: translateX(0%); }\n\n/**\n * Toggle Switch Globals\n *\n * All switches should take on the class `c-hamburger` as well as their\n * variant that will give them unique properties. This class is an overview\n * class that acts as a reset for all versions of the icon.\n */\n.c-hamburger {\n  display: block;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 31px;\n  height: 30px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  background-color: transparent;\n  position: fixed;\n  top: 30px;\n  left: 25px;\n  z-index: 1; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 13.5px;\n  left: 2px;\n  right: 2px;\n  height: 3px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 3px;\n  background-color: white;\n  content: \"\"; }\n\n.c-hamburger span::before {\n  top: -8px; }\n\n.c-hamburger span::after {\n  bottom: -8px; }\n\n.c-hamburger span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger span::before {\n  transition-property: top, transform; }\n\n.c-hamburger span::after {\n  transition-property: bottom, transform; }\n\n/* active state, i.e. menu open */\n.c-hamburger.is-active span {\n  background: none; }\n\n.c-hamburger.is-active span::before {\n  top: 0;\n  transform: rotate(45deg); }\n\n.c-hamburger.is-active span::after {\n  bottom: 0;\n  transform: rotate(-45deg); }\n\n.c-hamburger.is-active span::before,\n.c-hamburger.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\nsection.about {\n  height: 100vh;\n  background-color: #42ab9e;\n  color: white;\n  padding-top: 9rem;\n  justify-content: initial; }\n  section.about h2 {\n    font-size: 3rem; }\n  section.about div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n  section.about a {\n    color: #ACD7EC; }\n\nsection.projects article {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 2rem 1rem;\n  box-sizing: border-box;\n  margin-bottom: 2rem;\n  background-color: white; }\n  section.projects article img {\n    width: 100%; }\n    section.projects article img.icon {\n      width: 3rem; }\n  section.projects article div {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin: 2rem 0; }\n    section.projects article div p {\n      margin-top: 0px; }\n\nsvg {\n  color: black; }\n\nsection.projects {\n  display: flex;\n  padding: 0;\n  background-color: #eee; }\n  section.projects h2 {\n    margin-top: 6rem; }\n\nsection.skills {\n  height: 100vh; }\n  section.skills h2 {\n    margin-top: 6rem; }\n  section.skills div {\n    text-align: center; }\n\nfooter {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n  footer .contact-icons {\n    display: flex;\n    justify-content: center; }\n    footer .contact-icons img {\n      margin: 0  2rem; }\n\nsection.home div.contact-icons {\n  position: absolute;\n  transform: translateY(-50%);\n  top: 50vh;\n  left: 30px;\n  height: 30vh; }\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\nhtml {\n  font-size: 10px; }\n\nbody {\n  font-family: helvetica;\n  margin: 0px; }\n\nh1, h2 {\n  margin: 2rem 0;\n  font-size: 3rem;\n  font-weight: 400; }\n\nh3 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 400; }\n\nh4 {\n  font-size: 1.2rem;\n  font-size: 2rem;\n  font-weight: 300; }\n\np {\n  font-size: 1.6rem;\n  font-weight: 300;\n  text-align: center; }\n\nsection {\n  padding: 2rem 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  box-sizing: border-box; }\n\na {\n  color: #42ab9e;\n  text-decoration: none;\n  font-size: 1.6rem; }\n\nhr {\n  width: 9rem;\n  border: none;\n  border-bottom: 1px solid #42ab9e; }\n\nsection.home {\n  height: 100vh;\n  justify-content: space-between; }\n  section.home > div {\n    height: 70vh;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around; }\n  section.home h1 {\n    text-align: center; }\n  section.home a {\n    font-size: 3rem; }\n  section.home img.logo {\n    width: 12rem; }\n  section.home img.down-row {\n    width: 2rem; }\n  section.home button {\n    font-size: 2rem;\n    border: none;\n    border-bottom: 2px solid #42ab9e;\n    background-color: transparent;\n    padding: 0.6rem 1.7rem;\n    font-weight: 100; }\n  section.home svg polyline {\n    stroke-width: .3rem;\n    stroke: black;\n    animation-name: greenBlack;\n    animation-duration: 3s;\n    animation-iteration-count: infinite; }\n\n@keyframes greenBlack {\n  0% {\n    stroke: #42ab9e; }\n  50% {\n    stroke: #eee; }\n  100% {\n    stroke: #42ab9e; } }\n\n@media (min-width: 700px) {\n  svg {\n    visibility: hidden; } }\n\n.menu-button-component img {\n  position: fixed;\n  top: 20px;\n  left: 15px;\n  width: 50px;\n  z-index: 1; }\n\n.menu-modal {\n  position: fixed;\n  top: 0px;\n  background-color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n  width: 100%;\n  list-style: none;\n  font-size: 2rem;\n  opacity: 0;\n  transition: all .2s;\n  transition-timing-function: ease-in-out;\n  transform: translateX(-100%); }\n  .menu-modal li {\n    color: #42ab9e;\n    padding: 2rem 0rem; }\n    .menu-modal li a {\n      font-size: 2rem; }\n\n.menu-modal.active {\n  opacity: 1;\n  transform: translateX(0%); }\n\n/**\n * Toggle Switch Globals\n *\n * All switches should take on the class `c-hamburger` as well as their\n * variant that will give them unique properties. This class is an overview\n * class that acts as a reset for all versions of the icon.\n */\n.c-hamburger {\n  display: block;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  width: 31px;\n  height: 30px;\n  font-size: 0;\n  text-indent: -9999px;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  box-shadow: none;\n  border-radius: none;\n  border: none;\n  cursor: pointer;\n  transition: background 0.3s;\n  background-color: transparent;\n  position: fixed;\n  top: 30px;\n  left: 25px;\n  z-index: 1; }\n\n.c-hamburger:focus {\n  outline: none; }\n\n.c-hamburger span {\n  display: block;\n  position: absolute;\n  top: 13.5px;\n  left: 2px;\n  right: 2px;\n  height: 3px;\n  background: white; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  position: absolute;\n  display: block;\n  left: 0;\n  width: 100%;\n  height: 3px;\n  background-color: white;\n  content: \"\"; }\n\n.c-hamburger span::before {\n  top: -8px; }\n\n.c-hamburger span::after {\n  bottom: -8px; }\n\n.c-hamburger span {\n  transition: background 0s 0.3s; }\n\n.c-hamburger span::before,\n.c-hamburger span::after {\n  transition-duration: 0.3s, 0.3s;\n  transition-delay: 0.3s, 0s; }\n\n.c-hamburger span::before {\n  transition-property: top, transform; }\n\n.c-hamburger span::after {\n  transition-property: bottom, transform; }\n\n/* active state, i.e. menu open */\n.c-hamburger.is-active span {\n  background: none; }\n\n.c-hamburger.is-active span::before {\n  top: 0;\n  transform: rotate(45deg); }\n\n.c-hamburger.is-active span::after {\n  bottom: 0;\n  transform: rotate(-45deg); }\n\n.c-hamburger.is-active span::before,\n.c-hamburger.is-active span::after {\n  transition-delay: 0s, 0.3s; }\n\n@media (min-width: 700px) {\n  .menu-button-component {\n    display: none; }\n  .menu-modal {\n    display: none; } }\n\nsection.about {\n  min-height: 100vh;\n  background-color: #42ab9e;\n  color: white;\n  justify-content: center; }\n  section.about img {\n    margin: 0 0 4em; }\n  section.about h2 {\n    font-size: 3rem; }\n  section.about div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n  section.about a {\n    color: #ACD7EC; }\n\nsection.projects article {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 2rem 1rem;\n  box-sizing: border-box;\n  margin-bottom: 2rem;\n  background-color: white; }\n  section.projects article h4 {\n    margin-top: 1em;\n    margin-bottom: 0em; }\n  section.projects article img {\n    width: 100%; }\n    section.projects article img.icon {\n      width: 3rem; }\n  section.projects article p {\n    margin: 1em; }\n    section.projects article p.technologies {\n      opacity: 0.5; }\n  section.projects article a {\n    margin: 1em; }\n  section.projects article span::after {\n    content: \" \\B7   \";\n    color: #42ab9e; }\n  section.projects article span:last-child::after {\n    content: \"\"; }\n\nsvg {\n  color: black; }\n\nsection.projects {\n  min-height: 100vh;\n  display: flex;\n  padding: 3rem 0;\n  background-color: #eee; }\n  section.projects h2 {\n    margin-top: 6rem; }\n\n@media (min-width: 700px) {\n  section.projects div.articles {\n    margin: 8rem;\n    display: flex;\n    justify-content: center;\n    flex-wrap: wrap; }\n    section.projects div.articles article {\n      max-width: 60vw; } }\n\n@media (min-width: 1000px) {\n  section.projects div.articles article {\n    max-width: 40vw; } }\n\nsection.skills {\n  min-height: 100vh; }\n  section.skills h2 {\n    margin-top: 6rem; }\n  section.skills div {\n    text-align: center; }\n  section.skills span {\n    color: #42ab9e; }\n\nfooter {\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n  footer .contact-icons {\n    display: flex;\n    justify-content: center; }\n    footer .contact-icons img {\n      margin: 0  2rem; }\n\nsection.home div.contact-icons {\n  position: absolute;\n  transform: translateY(-50%);\n  top: 50vh;\n  left: 30px;\n  height: 30vh; }\n\nsection.home div.nav-container {\n  z-index: 1;\n  display: none; }\n  section.home div.nav-container nav {\n    padding: 2rem 0;\n    width: 100%;\n    background: #FFF; }\n\n@media (min-width: 700px) {\n  section.home > div.nav-container {\n    display: flex;\n    height: initial; }\n    section.home > div.nav-container a.home {\n      display: none; }\n  section.home > div.nav-fixed {\n    position: fixed;\n    top: 0px;\n    display: inline-block;\n    width: 100%; }\n    section.home > div.nav-fixed a.home {\n      position: absolute;\n      display: block;\n      left: 0px;\n      transform: translateX(-100%);\n      transition: all 0.3s; }\n      section.home > div.nav-fixed a.home img {\n        transform: scale(2.1); }\n      section.home > div.nav-fixed a.home.logo-active {\n        transform: translateX(0%); }\n  section.home nav {\n    position: relative;\n    display: flex;\n    justify-content: center; }\n    section.home nav a {\n      text-transform: capitalize;\n      font-size: 2rem;\n      padding: 0 2rem;\n      border-right: 1px solid #42ab9e; }\n      section.home nav a.home {\n        padding: 0;\n        border: none; }\n        section.home nav a.home img {\n          width: 100%;\n          height: 2rem; }\n      section.home nav a:last-child {\n        border-right: none; }\n      section.home nav a:hover {\n        color: #42ab9e;\n        cursor: pointer; } }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports) {
 
 	/*
@@ -22313,7 +22484,7 @@
 
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

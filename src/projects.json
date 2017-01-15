@@ -4,7 +4,7 @@
     "name": "MPULSE",
     "image": "src/images/mpulse-capture.png",
     "description": "Track your artists & concert in one place",
-    "technologies": "React · Redux · Sass · Rails · API",
+    "technologies": ["React", "Redux", "Sass", "Rails", "API"],
     "github": "https://github.com/Jimeno0/MPULSE-FRONT",
     "web": "http://music-pulse.co/"
   },
@@ -13,7 +13,7 @@
     "name": "GEODEVELOPERS JOB SITE",
     "image": "src/images/gis-jobs-capture.png",
     "description": "Employment website for the Geodevelopers community",
-    "technologies": "ArcGIS API · jQuery · Bootstrap",
+    "technologies": ["ArcGIS API", "jQuery", "Bootstrap"],
     "github": "https://github.com/Geo-Developers/geo-developers-site/tree/jobs_site",
     "web": "http://www.geodevelopers.org/jobs/"
   }

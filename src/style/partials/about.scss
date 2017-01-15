@@ -1,9 +1,11 @@
 section.about{
-  height: 100vh;
+  min-height: 100vh;
   background-color: $brand-color;
   color: white;
-  padding-top: 9rem;
-  justify-content: initial;
+  justify-content: center;
+  img {
+    margin: 0 0 4em;
+  }
   h2{
     font-size: $h1-size;
   }

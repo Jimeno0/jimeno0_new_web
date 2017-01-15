@@ -2,11 +2,11 @@ section.home {
   height: 100vh;
   justify-content: space-between;
   & > div {
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 70vh;
   }
   h1{
     text-align: center;
@@ -40,5 +40,11 @@ section.home {
     0% {stroke: $brand-color;}
     50% {stroke: $gray-color;}
     100% {stroke: $brand-color;}
+  }
+}
+
+@media (min-width:700px) {
+  svg {
+    visibility: hidden;
   }
 }
