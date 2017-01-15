@@ -3,11 +3,10 @@ import scrollToY from '../helpers/scroll_animation';
 
 class NavBar extends Component {
   componentDidMount() {
-    window.addEventListener('scroll', handleScroll);
-    const navBar = document.querySelector('nav');
+    const navBar = document.querySelector('.nav-container');
     const navBarPos = navBar.getBoundingClientRect();
-    const navBarTop = navBarPos.top;
-    const navBarPadding = navBar.style.padding;
+    // const navBarTop = navBarPos.top;
+    const navBarTop = navBar.offsetTop;
 
     function handleScroll() {
       const scrolled = window.scrollY;
@@ -17,6 +16,7 @@ class NavBar extends Component {
         navBar.classList.remove('nav-fixed');
       }
     }
+    window.addEventListener('scroll', handleScroll);
   }
   handleGoTo(event) {
     const sectionClass = event.currentTarget.dataset.section;
@@ -32,10 +32,15 @@ class NavBar extends Component {
       </a>
     ));
     return (
-      <nav>
-        {sectionsNodes}
-        <a href="https://medium.com/@jimeno0">BLOG</a>
-      </nav>
+      <div className="nav-container">
+        <nav>
+          <a className="home" data-section="home" onClick={e => this.handleGoTo(e)}>
+            <img src="src/images/jimeno0_logo.svg" alt="logo" />
+          </a>
+          {sectionsNodes}
+          <a href="https://medium.com/@jimeno0">BLOG</a>
+        </nav>
+      </div>
     );
   }
 }
