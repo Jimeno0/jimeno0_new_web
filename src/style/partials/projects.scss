@@ -1,4 +1,5 @@
 section.projects {
+  min-height: 100vh;
   display: flex;
   padding: 0;
   background-color: $gray-color;
@@ -13,8 +14,19 @@ section.projects {
     div.articles {
       margin: 8rem;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
 
+      article {
+        max-width: 60vw;
+      }
+    }
+  }
+}
+
+@media (min-width:1000px) {
+  section.projects {
+    div.articles {
       article {
         max-width: 40vw;
       }

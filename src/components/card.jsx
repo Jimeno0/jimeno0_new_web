@@ -7,8 +7,7 @@ const Card = (props) => {
       <h3>{name}</h3>
       <a href={web}><img src={image} alt={name} /></a>
       <p>{description}</p>
-      <h4>Technologies</h4>
-      <p>{technologies}</p>
+      <p className="technologies">{technologies}</p>
       <a href={github}>
         <img className="icon" src="src/images/github-logo.svg" alt="github link" />
       </a>

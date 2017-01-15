@@ -18,12 +18,14 @@ section.projects article{
     }
   }
   p {
-    margin: 0 1em;
+    margin: 1em;
+    &.technologies{
+      opacity: 0.5;
+    }
   }
   a {
     margin: 1em;
   }
-
 }
 
 svg {
