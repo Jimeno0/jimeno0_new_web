@@ -42,3 +42,9 @@ section.home {
     100% {stroke: $brand-color;}
   }
 }
+
+@media (min-width:700px) {
+  svg {
+    visibility: hidden;
+  }
+}

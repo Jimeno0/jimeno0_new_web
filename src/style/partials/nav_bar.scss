@@ -1,11 +1,14 @@
 nav {
   display: none;
-  padding: 10px;
+  padding: 1rem;
+  width: 100%;
+  background: #FFF;
 }
 @media (min-width: 700px) {
   section.home{
     nav {
       display: flex;
+      justify-content: center;
       &.nav-fixed{
       position: fixed;
       top: 0px;
@@ -13,9 +16,8 @@ nav {
       a{
         text-transform:capitalize;
         font-size: $h2-size;
-        color: black;
         padding: 0 2rem;
-        border-right: 1px solid black;
+        border-right: 1px solid $brand-color;
         &:last-child {
           border-right: none;
         }

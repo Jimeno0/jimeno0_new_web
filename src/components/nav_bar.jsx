@@ -25,16 +25,16 @@ class NavBar extends Component {
     scrollToY(scrollTo);
   }
   render() {
-    const sections = ['home', 'about', 'projects', 'skills'];
+    const sections = ['about', 'projects', 'skills'];
     const sectionsNodes = sections.map(section => (
       <a key={section} data-section={section} onClick={e => this.handleGoTo(e)} >
-        {section}
+        {section.toUpperCase()}
       </a>
     ));
     return (
       <nav>
         {sectionsNodes}
-        <a href="https://medium.com/@jimeno0">Blog</a>
+        <a href="https://medium.com/@jimeno0">BLOG</a>
       </nav>
     );
   }
