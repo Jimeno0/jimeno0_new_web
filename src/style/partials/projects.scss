@@ -7,3 +7,17 @@ section.projects {
     margin-top: 6rem;
   }
 }
+
+@media (min-width:700px) {
+  section.projects {
+    div.articles {
+      margin: 8rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      article {
+        max-width: 40vw;
+      }
+    }
+  }
+}

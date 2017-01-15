@@ -20,7 +20,9 @@ class Projects extends Component {
     return (
       <section className="projects">
         <h2>PROJECTS</h2>
-        {cards}
+        <div className="articles">
+          {cards}
+        </div>
       </section>
     );
   }

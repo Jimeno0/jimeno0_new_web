@@ -7,21 +7,23 @@ section.projects article{
   margin-bottom: 2rem;
   background-color: white;
 
+  h4 {
+    margin-top: 1em;
+    margin-bottom: 0em;
+  }
   img {
     width: 100%;
     &.icon {
       width: 3rem;
     }
   }
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem 0;
-    p {
-      margin-top: 0px;
-    }
+  p {
+    margin: 0 1em;
   }
+  a {
+    margin: 1em;
+  }
+
 }
 
 svg {
